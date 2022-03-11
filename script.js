@@ -14,30 +14,42 @@
 // WHEN the password is generated
 // THEN the password is either displayed in an alert or written to the page
 
+
+
 function generatePassword() {
   var passwordCharacters = []
-  var finalLength = []
-  var charLimit = prompt("Choose the length of your password. (8-128)") 
-  var userUpCase = confirm("Would you like to include uppercase letters?")
-  var userLowCase = confirm("Would you like to include lowercase letters?")
-  var userNum = confirm("Would you like to include numbers?")
-  var userSym = confirm("Would you like to include symbols?")
-  if (charLimit) {
-    finalLength.push = charLimit
-  }
-  if (userUpCase) { 
+  var characterLimit = prompt("Choose the length of your password. (8-128)")
+  var upperCase = confirm("Would you like to include uppercase letters?")
+  var lowerCase = confirm("Would you like to include lowercase letters?")
+  var number = confirm("Would you like to include numbers?")
+  var symbol = confirm("Would you like to include symbols?")
+  
+  if (upperCase) { 
     passwordCharacters.push = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q","R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    console.log(upperCase);
   }
-  if (userLowCase) {
+  if (lowerCase) {
     passwordCharacters.push = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    console.log(lowerCase);
   }
-  if (userNum) {
+  if (number) {
     passwordCharacters.push = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+    console.log(number);
   }
-  if (userSym) {
+  if (symbol) {
     passwordCharacters.push = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "=", "+", "~", "<", ">", ".", ",", ";", ":"]
+    console.log(symbol);
+  }
+  
+  console.log(passwordCharacters)
+
+  for (let i=0; i < characterLimit; i++) {
+    var index = math.floor(math.random() * passwordCharacters.length);
   }
 }
+
+
+
 
 
 //--------------------------------------------------------------------------------

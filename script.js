@@ -1,6 +1,10 @@
 function generatePassword() {
   var passwordCharacters = []
   var characterLimit = prompt("Choose the length of your password. (8-128)")
+  if (characterLimit < 8 || characterLimit > 128) {
+    alert("Please Enter A Valid Number");
+    return(characterLimit.prompt)
+  }
   var upperCase = confirm("Would you like to include uppercase letters?")
   var lowerCase = confirm("Would you like to include lowercase letters?")
   var number = confirm("Would you like to include numbers?")
@@ -34,8 +38,6 @@ function generatePassword() {
 
   return finalPassword;
 }
-
-
 
 
 //--------------------------------------------------------------------------------

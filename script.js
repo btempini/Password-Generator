@@ -25,7 +25,7 @@ function generatePassword() {
     var special = confirm("Would you like to include special characters?")
     var newPasswordCharacters = []
     if (lowerCase) {
-      //newPasswordCharacters re-assignment concatinating lowerCaseArr
+      //newPasswordCharacters re-assignment concatinating arrays
       newPasswordCharacters = newPasswordCharacters.concat(lowerCaseArr)
     }
     if (upperCase) {

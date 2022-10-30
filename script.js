@@ -8,16 +8,13 @@ function generatePassword() {
 
   //prompts for password criteria
   var passwordLength = prompt('Please choose the length of your password, between 8-128)');
-  passwordLength = Number(passwordLength)
+  // passwordLength = Number(passwordLength)
   console.log(passwordLength)
   //errors and more prompts
-  if (passwordLength < 8) {
-    alert("Please make sure your password has more than 8 characters!");
-    generatePassword();
-  } else if (passwordLength > 128) {
-    alert("Please make sure your password has less than 128 characters!");
-    generatePassword();
-  } else  //run this code
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert("Please make sure your password has more than 8 characters and less than 128 characters!");
+    writePassword();
+  } else  //run this code 
     {
     var lowerCase = confirm("Would you like to include lowercase letters?")
     var upperCase = confirm("Would you like to include uppercase letters?")
@@ -37,8 +34,9 @@ function generatePassword() {
     if (special) {
       newPasswordCharacters = newPasswordCharacters.concat(specialArr)
     }
-    console.log(newPasswordCharacters)
+    console.log(newPasswordCharacters.length)
   }
+  
   var newPassword = []
   //take password length and create a new array based on user input
   for (var i=0; i < passwordLength; i++) {
@@ -46,7 +44,6 @@ function generatePassword() {
     newPassword = newPassword.concat(newPasswordCharacters[random])
   }
   newPassword = newPassword.join("");
-  console.log(newPassword);
   return(newPassword);
 }
 
